@@ -1,6 +1,11 @@
 const About = () => {
   return (
-    <div className="w-full rounded-tl-3xl p-20 rounded-tr-3xl py-20 bg-[#CDEA68] text-black">
+    <div
+      data-scroll
+      data-scroll-section
+      data-scroll-speed="0.1"
+      className="w-full rounded-tl-3xl p-20 rounded-tr-3xl py-20 bg-[#CDEA68] text-black"
+    >
       <h1 className=" text-[4vw] leading-[4.5vw] tracking-tight">
         Ochi is a strategic partner for fast-grow­ing tech businesses that need
         to raise funds, sell products, ex­plain com­plex ideas, and hire great

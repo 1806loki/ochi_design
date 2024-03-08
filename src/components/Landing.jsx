@@ -6,7 +6,7 @@ const Landing = () => {
     <div
       data-scroll
       data-scroll-section
-      data-scroll-speed="-0.7"
+      data-scroll-speed="-0.3"
       className="w-full h-screen bg-zinc-100 pt-1"
     >
       <div className="textStructure  mt-40 px-20 ">

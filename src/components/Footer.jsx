@@ -1,7 +1,17 @@
 const Footer = () => {
   return (
-    <div className="w-full h-screen p-20">
-      <div className="flex flex-col justify-between h-full">
+    <div
+      data-scroll-section
+      data-scroll
+      data-scroll-speed="0.1"
+      className="w-full h-screen p-20"
+    >
+      <div
+        data-scroll
+        data-scroll-section
+        data-scroll-speed="0.2"
+        className="flex flex-col justify-between h-full"
+      >
         <div className="flex justify-between mb-20">
           <div className="w-1/2">
             <h1 className="text-[9vw] font-founders-bold leading-none uppercase">

@@ -7,7 +7,7 @@ const Navbar = () => {
   const controls = useAnimation();
 
   useEffect(() => {
-    const handleScroll = () => {
+    window.addEventListener("scroll", () => {
       const currentScrollTop =
         window.scrollY || document.documentElement.scrollTop;
       if (currentScrollTop > lastScrollTop) {
@@ -18,10 +18,8 @@ const Navbar = () => {
         controls.start({ y: "0%" });
       }
       setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    });
+    return () => window.removeEventListener("scroll", () => {});
   }, [lastScrollTop, controls]);
   return (
     <motion.nav

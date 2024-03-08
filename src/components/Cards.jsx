@@ -1,6 +1,11 @@
 const Cards = () => {
   return (
-    <div className="w-full h-screen bg-zinc-100 flex gap-5 mt-20 px-32">
+    <div
+      data-scroll-section
+      data-scroll
+      data-scroll-speed="-.3"
+      className="w-full h-screen bg-zinc-100 flex gap-5 mt-20 px-32"
+    >
       <div className="cardContainer h-[50vh] w-1/2">
         <div className="card relative w-full h-full bg-[#004D43] rounded-xl flex items-center justify-center flex-col">
           <img

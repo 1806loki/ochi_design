@@ -1,23 +1,46 @@
-import { motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
+import { useState } from "react";
 
 const Featured = () => {
+  const [isHoveringFyde, setHoveringFyde] = useState(false);
+  const [isHoveringVise, setHoveringVise] = useState(false);
+  const [isHoveringTrawa, setHoveringTrawa] = useState(false);
+  const [isHoveringBlend, setHoveringBlend] = useState(false);
   return (
-    <div className="w-full py-10 ">
+    <div
+      data-scroll
+      data-scroll-section
+      data-scroll-speed=".2"
+      className="w-full py-10 "
+    >
       <div className="w-full px-20 border-b-[1px] border-zinc-700 pb-20">
         <h1 className="text-7xl tracking-tight">Featured Projects</h1>
       </div>
       <div className="px-20">
         <div className="cards w-full flex gap-10 mt-10">
-          <div className="cardContainer rounded-xl w-1/2 h-[75vh]   relative ">
+          <div
+            onMouseEnter={() => setHoveringFyde(true)}
+            onMouseLeave={() => setHoveringFyde(false)}
+            className="cardContainer rounded-xl w-1/2 h-[75vh]   relative "
+          >
             <div className="flex items-center gap-2 mb-5">
               <div className="w-[10px] h-[10px] bg-black rounded-full"></div>
               <h1>FYDE</h1>
             </div>
-            <h1 className="absolute left-full top-1/2 flex -translate-x-1/2 -translate-y-1/2  text-[#CDEA68] z-[9] text-[9vw] font-founders-bold uppercase">
+            <h1 className="absolute left-full top-1/2 flex -translate-x-1/2 overflow-hidden -translate-y-1/2  text-[#CDEA68] z-[9] text-[9vw] font-founders-bold uppercase">
               {"Fyde".split("").map((item, index) => (
-                <span key={index} className="inline-block">
+                <motion.span
+                  initial={{
+                    y: "100%",
+                    transition: { duration: 0.3, ease: [0.87, 0, 0.13, 1] },
+                  }}
+                  animate={isHoveringFyde ? { y: "0" } : { y: "100%" }}
+                  transition={{ ease: easeInOut, delay: index * 0.1 }}
+                  key={index}
+                  className="inline-block"
+                >
                   {item}
-                </span>
+                </motion.span>
               ))}
             </h1>
             <div className="card w-full h-full bg-green-600 overflow-hidden">
@@ -42,14 +65,29 @@ const Featured = () => {
               </button>
             </div>
           </div>
-          <div className="cardContainer rounded-xl w-1/2 h-[75vh]   relative">
+          <div
+            onMouseEnter={() => setHoveringVise(true)}
+            onMouseLeave={() => setHoveringVise(false)}
+            className="cardContainer rounded-xl w-1/2 h-[75vh]   relative"
+          >
             <div className="flex items-center gap-2 mb-5">
               <div className="w-[10px] h-[10px] bg-black rounded-full"></div>
               <h1>VISE</h1>
             </div>
-            <h1 className="absolute right-full top-1/2 translate-x-1/2 -translate-y-1/2  text-[#CDEA68] z-[9] text-[9vw] font-founders-bold uppercase">
+            <h1 className="absolute right-full top-1/2 translate-x-1/2 -translate-y-1/2  text-[#CDEA68] z-[9] text-[9vw] font-founders-bold uppercase flex overflow-hidden">
               {"Vise".split("").map((item, index) => (
-                <motion.span key={index}>{item}</motion.span>
+                <motion.span
+                  initial={{
+                    y: "100%",
+                    transition: { duration: 0.3, ease: [0.87, 0, 0.13, 1] },
+                  }}
+                  animate={isHoveringVise ? { y: "0" } : { y: "100%" }}
+                  transition={{ ease: easeInOut, delay: index * 0.1 }}
+                  key={index}
+                  className="inline-block"
+                >
+                  {item}
+                </motion.span>
               ))}
             </h1>
             <div className="card w-full h-full   ">
@@ -70,14 +108,29 @@ const Featured = () => {
           </div>
         </div>
         <div className="cards w-full flex gap-10 mt-28">
-          <div className="cardContainer rounded-xl w-1/2 h-[75vh]   relative ">
+          <div
+            onMouseEnter={() => setHoveringTrawa(true)}
+            onMouseLeave={() => setHoveringTrawa(false)}
+            className="cardContainer rounded-xl w-1/2 h-[75vh]   relative "
+          >
             <div className="flex items-center gap-2 mb-5">
               <div className="w-[10px] h-[10px] bg-black rounded-full"></div>
               <h1>TRAWA</h1>
             </div>
-            <h1 className="absolute left-full top-1/2 -translate-x-1/2 -translate-y-1/2  text-[#CDEA68] z-[9] text-[9vw] font-founders-bold uppercase">
+            <h1 className="absolute left-full top-1/2 -translate-x-1/2 -translate-y-1/2  text-[#CDEA68] z-[9] text-[9vw] font-founders-bold uppercase flex overflow-hidden">
               {"TRAWA".split("").map((item, index) => (
-                <span key={index}>{item}</span>
+                <motion.span
+                  initial={{
+                    y: "100%",
+                    transition: { duration: 0.3, ease: [0.87, 0, 0.13, 1] },
+                  }}
+                  animate={isHoveringTrawa ? { y: "0" } : { y: "100%" }}
+                  transition={{ ease: easeInOut, delay: index * 0.1 }}
+                  key={index}
+                  className="inline-block"
+                >
+                  {item}
+                </motion.span>
               ))}
             </h1>
             <div className="card w-full h-full bg-green-600 overflow-hidden">
@@ -99,20 +152,35 @@ const Featured = () => {
               </button>
             </div>
           </div>
-          <div className="cardContainer rounded-xl w-1/2 h-[75vh]   relative">
+          <div
+            onMouseEnter={() => setHoveringBlend(true)}
+            onMouseLeave={() => setHoveringBlend(false)}
+            className="cardContainer rounded-xl w-1/2 h-[75vh]   relative"
+          >
             <div className="flex items-center gap-2 mb-5">
               <div className="w-[10px] h-[10px] bg-black rounded-full"></div>
-              <h1>PREMIUM BLEND</h1>
+              <h1> BLEND</h1>
             </div>
-            <h1 className="absolute right-full top-1/2 translate-x-1/2 -translate-y-1/2 tracking-tight text-[#CDEA68] z-[9] text-[7vw]  font-founders-bold uppercase">
-              {"PREMIUM BLEND".split("").map((item, index) => (
-                <span key={index}>{item}</span>
+            <h1 className="absolute right-full top-1/2 translate-x-1/2 -translate-y-1/2 tracking-tight text-[#CDEA68] z-[9] text-[7vw]  font-founders-bold uppercase flex overflow-hidden">
+              {" BLEND".split("").map((item, index) => (
+                <motion.span
+                  initial={{
+                    y: "100%",
+                    transition: { duration: 0.3, ease: [0.87, 0, 0.13, 1] },
+                  }}
+                  animate={isHoveringBlend ? { y: "0" } : { y: "100%" }}
+                  transition={{ ease: easeInOut, delay: index * 0.1 }}
+                  key={index}
+                  className="inline-block"
+                >
+                  {item}
+                </motion.span>
               ))}
             </h1>
             <div className="card w-full h-full   ">
               <img
                 src="https://ochi.design/wp-content/uploads/2022/12/PB-Front-4-663x551.png"
-                alt="PREMIUM BLEND"
+                alt=" BLEND"
                 className="w-full h-full bg-cover"
               />
             </div>
