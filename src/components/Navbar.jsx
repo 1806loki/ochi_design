@@ -1,6 +1,35 @@
+/* eslint-disable no-unused-vars */
+import { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
 const Navbar = () => {
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [navDirection, setNavDirection] = useState("down");
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollTop =
+        window.scrollY || document.documentElement.scrollTop;
+      if (currentScrollTop > lastScrollTop) {
+        setNavDirection("up");
+        controls.start({ y: "-100%" });
+      } else {
+        setNavDirection("down");
+        controls.start({ y: "0%" });
+      }
+      setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollTop, controls]);
   return (
-    <div className="fixed z-999 w-screen px-20 py-8 font-['Neue Montreal'] flex justify-between items-center">
+    <motion.nav
+      initial={{ y: "0%" }}
+      animate={controls}
+      transition={{ duration: 0.2, ease: "easeInOut" }}
+      className="fixed top-0 left-0 right-0 z-50 w-screen px-20 py-8 font-['Neue Montreal'] flex justify-between items-center backdrop-blur-sm"
+    >
       <div className="logo">
         <svg
           width="72"
@@ -37,7 +66,7 @@ const Navbar = () => {
             <a
               className={`text-md font-light capitalize ${
                 index === 4 ? "ml-32 " : ""
-              }`}
+              }    before:`}
               key={index}
             >
               {link}
@@ -45,7 +74,7 @@ const Navbar = () => {
           )
         )}
       </div>
-    </div>
+    </motion.nav>
   );
 };
 

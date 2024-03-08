@@ -19,41 +19,41 @@ const Footer = () => {
             </div>
             <div>
               <h1 className="mb-2">S : </h1>
-              <ul>
-                <li>Instagram</li>
-                <li>Behance</li>
-                <li>Facebook</li>
-                <li>LinkedLn</li>
-              </ul>
+              <div className="flex flex-col">
+                <a href="#">Instagram</a>
+                <a href="#">Behance</a>
+                <a href="#">Facebook</a>
+                <a href="#">LinkedLn</a>
+              </div>
               <br />
             </div>
             <div className="flex justify-between">
               <div>
                 <h1 className="mb-2">L :</h1>
-                <ul>
-                  <li>202-1965 W 4th Ave</li>
-                  <li>Vancouver, Canada</li>
+                <div className="flex flex-col">
+                  <a href="#">202-1965 W 4th Ave</a>
+                  <a href="#">Vancouver, Canada</a>
                   <br />
-                  <li>30 Chukarina St</li>
-                  <li>Lviv, Ukraine</li>
-                </ul>
+                  <a href="#">30 Chukarina St</a>
+                  <a href="#">Lviv, Ukraine</a>
+                </div>
                 <br />
               </div>
               <div>
                 <h1 className="mb-2">M :</h1>
-                <ul>
-                  <li>Home</li>
-                  <li>Services</li>
-                  <li>Our work</li>
-                  <li>About us</li>
-                  <li>Insights</li>
-                </ul>
+                <div className="flex flex-col">
+                  <a href="#">Home</a>
+                  <a href="#">Services</a>
+                  <a href="#">Our work</a>
+                  <a href="#">About us</a>
+                  <a href="#">Insights</a>
+                </div>
                 Contact us
               </div>
             </div>
             <div>
               <h1> E :</h1>
-              <p>hello@ochi.design</p>
+              <a href="#">hello@ochi.design</a>
             </div>
           </div>
         </div>

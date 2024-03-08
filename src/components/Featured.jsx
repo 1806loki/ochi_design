@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const Featured = () => {
   return (
     <div className="w-full py-10 ">
@@ -11,9 +13,11 @@ const Featured = () => {
               <div className="w-[10px] h-[10px] bg-black rounded-full"></div>
               <h1>FYDE</h1>
             </div>
-            <h1 className="absolute left-full top-1/2 -translate-x-1/2 -translate-y-1/2  text-[#CDEA68] z-[9] text-[9vw] font-founders-bold uppercase">
+            <h1 className="absolute left-full top-1/2 flex -translate-x-1/2 -translate-y-1/2  text-[#CDEA68] z-[9] text-[9vw] font-founders-bold uppercase">
               {"Fyde".split("").map((item, index) => (
-                <span key={index}>{item}</span>
+                <span key={index} className="inline-block">
+                  {item}
+                </span>
               ))}
             </h1>
             <div className="card w-full h-full bg-green-600 overflow-hidden">
@@ -45,7 +49,7 @@ const Featured = () => {
             </div>
             <h1 className="absolute right-full top-1/2 translate-x-1/2 -translate-y-1/2  text-[#CDEA68] z-[9] text-[9vw] font-founders-bold uppercase">
               {"Vise".split("").map((item, index) => (
-                <span key={index}>{item}</span>
+                <motion.span key={index}>{item}</motion.span>
               ))}
             </h1>
             <div className="card w-full h-full   ">
